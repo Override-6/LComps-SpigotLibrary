@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LComps:jar">
+    <output-path>D:/Users/Maxime/Desktop/Dev/Perso</output-path>
+    <root id="archive" name="LComps.jar">
+      <element id="module-output" name="LComps" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/19.0.0/annotations-19.0.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
