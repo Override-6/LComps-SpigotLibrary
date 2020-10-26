@@ -3,8 +3,8 @@ A simple library to add event listeners on Entities, Players, Items or Blocks
 
 # How to use
 ## The class ComponentWrapper
-A ComponentWrapper can be instancied with his builder.
-Once instancied, the object can wrap any component.
+A ComponentWrapper instance can only be created by his builder.
+Once instancied, it can wrap any component.
 example : 
 ```java
 WrappedPlayer wrappedPlayer = componentWrapper.wrap(bukkitPlayer);
