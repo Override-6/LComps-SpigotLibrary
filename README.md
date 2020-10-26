@@ -53,3 +53,26 @@ wplayer.removeEventConsumer("kick");
 ```
 
 There is an exception for WrappedItem because there is no abstract event class that group all possibly action made with Items or itemStacks, so please take a look into [WrappedItem](https://github.com/Override-6/LComps-SpigotLibrary/blob/master/src/fr/override/mc/lcomp/wrappers/WrappedItem.java)
+
+# How to extends
+## [WrapperFactory](https://github.com/Override-6/LComps-SpigotLibrary/blob/master/src/fr/override/mc/lcomp/WrapperFactory.java) interface
+The WrapperFactory is only used by the ComponentWrapper, and help him instancing wrappers for any given component, if it was not found into the cache.
+to inject a WrapperFactory into a ComponentWrapper, you can use his Builder.
+
+## Wrapped Component Event Dispatchers interfaces
+There is one Wrapped Component Event Dispatcher per wrapped type 
+   * WrappedPlayerEventDispatcher
+   * WrappedItemEventDispatcher
+   * WrappedEntityEventDispatcher
+   * WrappedBlockEventDispatcher
+   
+
+## Component listeners interfaces
+There is one Listener Interace per wrapped type 
+   * PlayersListener
+   * ItemsListener
+   * EntitiesListener
+   * BlocksListeners
+   
+Only one Listener instance per ComponentWrapper instance is needed.
+Listeners handle the cached 
