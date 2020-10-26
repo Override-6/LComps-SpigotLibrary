@@ -71,9 +71,14 @@ There is one Listener Interace per wrapped type
    * BlocksListeners
    
 Only one Listener instance per ComponentWrapper is needed.  
-Listeners handle the cache of wrapped components, and dispatch the events to each registred wrapped component EvnetDispatcher  
+Listeners handle the cache of wrapped components, and dispatch the events to each registred wrapped component  
+The can also decide what kind of event will be listened or not.
 
 # How to extend
 ## [WrapperFactory](https://github.com/Override-6/LComps-SpigotLibrary/blob/master/src/fr/override/mc/lcomp/WrapperFactory.java) interface
 The WrapperFactory is only used by the ComponentWrapper, and help him instancing wrappers for any given component, if it was not found into the cache.  
-to inject a WrapperFactory into a ComponentWrapper, you can use his Builder.  
+Factories decide what kind of implementation will be used for wrappers
+To inject a WrapperFactory into a ComponentWrapper, you can use his Builder.  
+
+## Component Listeners interfaces
+We already seen Component Listeners interfaces above, but their implementation can be specified by the builder of ComponentWrapper
