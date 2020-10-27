@@ -30,7 +30,7 @@ ComponentWrapper.builder(plugin)
                 .build();
 ```
 
-An instance with default factory and listeners can be used with `ComponentWrapper.defaults`  
+An instance with default factory and ListenerHandlers can be used with `DefaultComponentWrapper.createNew`  
 this class transform entities, blocks, items and players to a wrapped object.  
 
 ## The wrapper classes
@@ -63,16 +63,16 @@ There is one Wrapped Component Event Dispatcher per wrapped type
    
    Event dispatchers dispatch registred events of a wrapped component
 
-## Components Listeners interfaces
+## ListenerHandlers interfaces
 There is one Listener Interace per wrapped type 
-   * PlayersListener
-   * ItemsListener
-   * EntitiesListener
-   * BlocksListeners
+   * PlayerListenerHandler
+   * ItemsListenerHandler
+   * EntitiesListenerHandler
+   * BlocksListenerHandler
    
-Only one Listener instance per ComponentWrapper is needed.  
-Listeners handle the cache of wrapped components, and dispatch the events to each registred wrapped component  
-The can also decide what kind of event will be listened or not.
+Only one ListenerHandler instance per ComponentWrapper is needed.  
+ListenerHandlers handle the cache of wrapped components, and dispatch the events to each registred wrapped component  
+They can also chose what kind of event will be listened or not.
 
 # How to extend
 ## [WrapperFactory](https://github.com/Override-6/LComps-SpigotLibrary/blob/master/src/fr/override/mc/lcomp/WrapperFactory.java) interface
@@ -80,5 +80,5 @@ The WrapperFactory is only used by the ComponentWrapper, and help him instancing
 Factories decide what kind of implementation will be used for wrappers
 To inject a WrapperFactory into a ComponentWrapper, you can use his Builder.  
 
-## Component Listeners interfaces
-We already seen Component Listeners interfaces above, but their implementation can be specified by the builder of ComponentWrapper
+## ListenerHandlers interfaces
+We already seen ListenerHandlers interfaces above, but their implementation can be specified by the builder of ComponentWrapper
