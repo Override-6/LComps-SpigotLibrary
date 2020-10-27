@@ -47,7 +47,7 @@ example of use :
 
 ```scala
 WrappedPlayer wplayer = componentWrapper.wrap(bukkitPlayer);
-wplayer.onPlayerEvent(PlayerCommandPreProssesEvent.class, event => if (event.getCommand().contains("kick") event.setCancelled(), "kick");
+wplayer.onPlayerEvent(PlayerCommandPreProssesEvent.class, event => if (event.getCommand().contains("kick")) event.setCancelled(), "kick");
 Thread.sleep(45000);
 wplayer.removeEventConsumer("kick");
 ```
