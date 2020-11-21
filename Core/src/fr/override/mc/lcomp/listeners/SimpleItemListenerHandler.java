@@ -80,7 +80,7 @@ public class SimpleItemListenerHandler implements ItemListenerHandler {
     }
 
     @SafeVarargs
-    private void checkUntilFound(Predicate<WrappedItemEventDispatcher>... checks) {
+    private final void checkUntilFound(Predicate<WrappedItemEventDispatcher>... checks) {
         for (WrappedItemEventDispatcher dispatcher : dispatchers) {
             for (Predicate<WrappedItemEventDispatcher> check : checks) {
                 if (check.test(dispatcher))

@@ -144,7 +144,8 @@ public class SimpleItemListener implements ItemListener {
         if (consumers.onEntityUse == null)
             return false;
         Entity entity = event.getEntity();
-        if (entity instanceof LivingEntity living) {
+        if (entity instanceof LivingEntity) {
+            LivingEntity living = (LivingEntity) entity;
             EntityEquipment equipment = living.getEquipment();
             if (equipment == null)
                 return false;
@@ -197,8 +198,9 @@ public class SimpleItemListener implements ItemListener {
     public boolean testOnPlayerDamageEntity(EntityDamageByEntityEvent event) {
         if (consumers.onPlayerDamageEntity == null)
             return false;
-        if (!(event.getDamager() instanceof Player player))
+        if (!(event.getDamager() instanceof Player))
             return false;
+        Player player = (Player) event.getDamager();
         EntityEquipment equipment = player.getEquipment();
         if (equipment == null || getItem().equals(equipment.getItemInHand()))
             return false;
@@ -212,8 +214,9 @@ public class SimpleItemListener implements ItemListener {
         if (consumers.onPlayerKillEntity == null || cause == null)
             return false;
 
-        if (!(cause.getEntity() instanceof Player player))
+        if (!(cause.getEntity() instanceof Player))
             return false;
+        Player player = (Player) event.getEntity();
         EntityEquipment equipment = player.getEquipment();
         if (equipment == null || getItem().equals(equipment.getItemInHand()))
             return false;

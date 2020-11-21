@@ -41,7 +41,7 @@ public class SimpleBlockListenerHandler implements BlockListenerHandler {
     }
 
     @SafeVarargs
-    private void testUntilFound(Predicate<WrappedBlockEventDispatcher>... checks) {
+    private final void testUntilFound(Predicate<WrappedBlockEventDispatcher>... checks) {
         for (WrappedBlockEventDispatcher dispatcher : dispatchers) {
             for (Predicate<WrappedBlockEventDispatcher> check : checks) {
                 if (check.test(dispatcher))
